@@ -1,0 +1,31 @@
+<ion-header>
+  <ion-navbar>
+    <button menuToggle *ngIf="!selectedItem">
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>{{producto.nombre}}</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-slides pager *ngIf="producto.imagesUrl && producto.imagesUrl.length" class="item-detail-slide" autoplay="7000" loop>
+
+    <ion-slide *ngFor="let imgUrl of producto.imagesUrl">
+      <img src="{{imgUrl}}"/>
+    </ion-slide>
+
+  </ion-slides>
+
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>{{producto.nombre}} <p float-right>$ {{producto.precio}}</p></ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      {{producto.descripcion}}
+    </ion-card-content>
+  </ion-card>
+
+  <ion-fab right bottom>
+    <button ion-fab mini color="dark"><ion-icon name="share"></ion-icon></button>
+  </ion-fab>
+</ion-content>

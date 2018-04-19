@@ -1,0 +1,35 @@
+<ion-menu [content]="content" [class]="aplicacion.themeKey">
+
+  <ion-header>
+    <ion-toolbar>
+      <ion-title>Birra Power</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-content>
+    <ion-item-group>
+      <ion-item-divider color="light">Menú</ion-item-divider>
+      <button ion-item *ngFor="let p of pages" (click)="openPage(p)">
+        {{p.title}}
+      </button>
+    </ion-item-group>
+    <ion-item-group>
+      <ion-item-divider color="light">Más</ion-item-divider>
+      <ion-item>
+        Seguinos en Facebook
+        <ion-icon name="logo-facebook" item-end></ion-icon>
+      </ion-item>
+      <ion-item>
+        Seguinos en Instagram
+        <ion-icon name="logo-instagram" item-end></ion-icon>
+      </ion-item>
+      <button ion-item (click)="goHome()">
+        Inicio
+        <ion-icon name="home" item-end></ion-icon>
+      </button>
+    </ion-item-group>
+  </ion-content>
+
+</ion-menu>
+
+<ion-nav [root]="rootPage" #content swipeBackEnabled="false" [class]="aplicacion.themeKey"></ion-nav>

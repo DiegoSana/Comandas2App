@@ -1,0 +1,25 @@
+.app9 {
+
+  /*.toolbar-background, .menu-inner .content, .menu-inner .list .item {
+    border-color: red !important;
+    background: red !important;
+  }*/
+
+  page-hello-ionic {
+    .bg-image {
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: 100% auto;
+      background-color: #121713;
+    }
+
+    .app-title {
+      margin-top: 30% !important;
+    }
+
+    .app-description {
+      font-size: 1.5em;
+    }
+  }
+
+}
