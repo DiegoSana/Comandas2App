@@ -39,7 +39,6 @@ export class ItemDetailsPage {
         this.rest.getProduct(this.selectedItem.producto.id)
             .then(data => {
                 this.producto = data;
-                console.log(this.producto);
                 /*var prodImgs = this.producto.productosImagenes;
                 prodImgs.splice(0, 1);
                 console.log(data.productosImagenes);

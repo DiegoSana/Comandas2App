@@ -15,23 +15,31 @@ Servidor con Docker instalado
 INSTALLATION
 ------------
 
-### 1. Crear los contenedores Docker
+### 1. Obtener el repositorio de github
+
+~~~
+cd /var/www
+git clone git@github.com:DiegoSana/Comandas2App.git Comandas2App
+
+~~~
+
+### 2. Crear los contenedores Docker
 
 Esto lo hacemos mediante el siguiente comando que obtiene las configuraciones del contenedor desde dockerHub [(Imagen Docker)](https://hub.docker.com/r/agileek/ionic-framework/)
 
 Este paso puede demorar
 
 ~~~
-docker run -ti --rm -p 8100:8100 -p 35729:35729 -v /path/to/your/ionic-project/:/myApp:rw agileek/ionic-framework:3.19.1
+docker run -ti --rm -p 8100:8100 -p 35729:35729 -v /var/www/Comandas2App/comandas2app/:/myApp:rw agileek/ionic-framework:3.19.1
 ~~~
 
-### 2. Crear alias
+### 3. Crear alias
 
 ~~~
 alias ionicComandas="docker run -ti --rm --net host --privileged -v /dev/bus/usb:/dev/bus/usb -v ~/.gradle:/root/.gradle -v \$PWD:/myApp:rw agileek/ionic-framework:3.19.1 ionic"
 ~~~
 
-### 3. Servir la aplicacion
+### 4. Servir la aplicacion
 
 ~~~
 ionicComandas serve

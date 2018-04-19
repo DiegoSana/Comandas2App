@@ -58,7 +58,7 @@ export class MyApp {
 
     getCategories() {
         this.rest.getCategories()
-            .then(data => {
+            .then((data: {items:any}) => {
                 var pages = [];
                 data.items.forEach(function(val, key){
                     pages.push({title: val.nombre, component: ListPage, categoria_id: val.id, categoria: val});

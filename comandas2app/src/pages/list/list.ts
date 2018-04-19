@@ -28,7 +28,7 @@ export class ListPage {
 
     getProductsByCategorie() {
         this.rest.getProductsByCategorie(this.navParams.data.categoria_id)
-            .then(data => {
+            .then((data: {items: any}) => {
                 var items = [];
                 data.items.forEach(function(val, key){
                   items.push({producto: val});

@@ -15,7 +15,7 @@ export class AplicacionProvider {
 
     getAplicacion() {
         this.rest.getAplicacion()
-            .then(data => {
+            .then((data: {nombre: string, ionicHomeImageUrl: string, id: number}) => {
                 this.nombre = data.nombre;
                 this.ionicHomeImageUrl = data.ionicHomeImageUrl;
                 this.themeKey = 'app'+data.id;
