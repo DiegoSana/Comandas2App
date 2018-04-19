@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 
 import { NavController, NavParams } from 'ionic-angular';
 import {RestapiProvider} from "../../providers/restapi/restapi";
+import {Producto} from "../../models/producto";
 
 @Component({
     selector: 'page-item-details',
@@ -10,7 +11,8 @@ import {RestapiProvider} from "../../providers/restapi/restapi";
 export class ItemDetailsPage {
 
     selectedItem: any;
-    producto: {
+    producto = {} as Producto;
+    /*producto: {
         nombre:any,
         descripcion:any,
         precio:any,
@@ -24,7 +26,7 @@ export class ItemDetailsPage {
                 imageUrl: 'cargando',
             }
         ]
-    };
+    };*/
 
     constructor(public navCtrl: NavController, public navParams: NavParams, public rest: RestapiProvider) {
         this.selectedItem = navParams.get('item');
