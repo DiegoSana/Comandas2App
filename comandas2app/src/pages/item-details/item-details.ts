@@ -12,21 +12,6 @@ export class ItemDetailsPage {
 
     selectedItem: any;
     producto = {} as Producto;
-    /*producto: {
-        nombre:any,
-        descripcion:any,
-        precio:any,
-        productosImagenes:Array<{imageUrl:any}>
-    } = {
-        nombre: 'Cargando...',
-        descripcion: 'Cargando...',
-        precio: 'Cargando...',
-        productosImagenes: [
-            {
-                imageUrl: 'cargando',
-            }
-        ]
-    };*/
 
     constructor(public navCtrl: NavController, public navParams: NavParams, public rest: RestapiProvider) {
         this.selectedItem = navParams.get('item');
@@ -41,14 +26,6 @@ export class ItemDetailsPage {
         this.rest.getProduct(this.selectedItem.producto.id)
             .then(data => {
                 this.producto = data;
-                /*var prodImgs = this.producto.productosImagenes;
-                prodImgs.splice(0, 1);
-                console.log(data.productosImagenes);
-                for (let val of data.productosImagenes) {
-                    console.log(val);
-                    prodImgs.push(val);
-                }
-                this.producto.productosImagenes = prodImgs;*/
             }).catch(err => {console.log(err)});
     }
 }
