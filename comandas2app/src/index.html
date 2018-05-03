@@ -15,6 +15,15 @@
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
 
+
+  <meta property="og:title" content="Facebook Open Graph Demo">
+  <meta property="og:image" content="http://www.comandas.com.ar/yii2images/images/image-by-item-and-alias?item=Aplicacion9&dirtyAlias=a94ea4bd13-1.jpeg">
+  <meta property="og:site_name" content="Example Website">
+  <meta property="og:description" content="Here is a nice description">
+
+
+
+
   <!-- cordova.js required for cordova apps (remove if not needed) -->
   <script src="cordova.js"></script>
 
@@ -31,7 +40,14 @@
 
 </head>
 <body>
-
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = 'https://connect.facebook.net/es_LA/sdk.js#xfbml=1&version=v2.12&appId=523141734740021&autoLogAppEvents=1';
+    fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
   <!-- Ionic's root component and where the app will load -->
   <ion-app></ion-app>
 

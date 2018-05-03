@@ -9,6 +9,7 @@
 
 
 <ion-content padding class="bg-image" ion-text color="light" [style.background-image]="'url(' + aplicacion.ionicHomeImageUrl + ')'">
+    <ion-grid fixed>
 
   <!--<h1 text-center class="app-title">Bienvenidos a ...</h1>
 
@@ -19,4 +20,22 @@
     Follow along on the tutorial section of the Ionic docs!
   </p>-->
 
+    <!-- Sharing Icons -->
+  <div text-center class="social-home">
+      <button ion-button icon-only (click)="openFacebook()" color="dark">
+        <ion-icon class="share-icon" name="logo-facebook"></ion-icon>
+      </button>
+      <button ion-button icon-only (click)="openInstagram()" color="dark">
+        <ion-icon class="share-icon" name="logo-instagram"></ion-icon>
+      </button>
+  </div>
+
+  <!--<ion-grid>
+    <ion-row>
+      <ion-col>
+        <div class="fb-like" data-href="https://www.facebook.com/sofar.desarrollos/" data-width="1600" data-layout="button" data-action="like" data-size="large" data-show-faces="false" data-share="false"></div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>-->
+    </ion-grid>
 </ion-content>

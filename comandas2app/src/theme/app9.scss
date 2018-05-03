@@ -4,14 +4,32 @@ ion-loading {
   }
 }
 
-.app9 {
+/*ion-app {
+  .app-root {
+    width: 25%;
+    margin: 5% 35%;
+    height: 80%;
+    background-image: url("../assets/imgs/mobile-bkg.png");
+    background-repeat: no-repeat, repeat;
+    background-position: left;
+  }
+}*/
 
+.app9 {
   /*.toolbar-background, .menu-inner .content, .menu-inner .list .item {
     border-color: red !important;
     background: red !important;
   }*/
 
   page-hello-ionic {
+
+    .social-home {
+      position: fixed;
+      left: 0;
+      bottom: 10%;
+      right: 0;
+    }
+
     .bg-image {
       background-repeat: no-repeat;
       background-position: center;

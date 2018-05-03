@@ -1,6 +1,6 @@
 import { Component, ViewChild } from '@angular/core';
 
-import {Platform, MenuController, Nav, NavController} from 'ionic-angular';
+import {Platform, MenuController, Nav} from 'ionic-angular';
 
 import { HelloIonicPage } from '../pages/hello-ionic/hello-ionic';
 import { ListPage } from '../pages/list/list';
@@ -9,6 +9,7 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import {RestapiProvider} from "../providers/restapi/restapi";
 import {AplicacionProvider} from "../providers/app/aplicacion";
+import {Social} from "../providers/app/social";
 
 
 @Component({
@@ -27,7 +28,8 @@ export class MyApp {
         public statusBar: StatusBar,
         public splashScreen: SplashScreen,
         public rest: RestapiProvider,
-        public aplicacion: AplicacionProvider
+        public aplicacion: AplicacionProvider,
+        public social: Social
     ) {
         this.initializeApp();
         this.getCategories();
@@ -42,6 +44,13 @@ export class MyApp {
         });
     }
 
+    openInstagram() {
+        this.social.openInstagram();
+    }
+
+    openFacebook() {
+        this.social.openFacebook();
+    }
     goHome() {
         // close the menu when clicking a link from the menu
         this.menu.close();

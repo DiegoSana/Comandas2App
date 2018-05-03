@@ -11,7 +11,7 @@ import {HttpParams} from "@angular/common/http";
 @Injectable()
 export class RestapiProvider {
 
-    url:string = "http://api.comandas.com/v1/";
+    url:string = "http://api.comandas.com.ar/v1/";
     aplicacion_id:string = '9';
     headers:any;
     params:any;

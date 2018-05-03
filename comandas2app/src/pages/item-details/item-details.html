@@ -7,25 +7,31 @@
   </ion-navbar>
 </ion-header>
 
-<ion-content>
-  <ion-slides pager *ngIf="producto.imagesUrl && producto.imagesUrl.length" class="item-detail-slide" autoplay="7000" loop>
+<ion-content fixed>
+  <ion-grid fixed>
+    <ion-row>
+      <ion-slides col-lg-8 offset-lg-2 pager *ngIf="producto.imagesUrl && producto.imagesUrl.length" class="item-detail-slide" autoplay="7000" loop>
 
-    <ion-slide *ngFor="let imgUrl of producto.imagesUrl">
-      <img src="{{imgUrl}}"/>
-    </ion-slide>
+        <ion-slide *ngFor="let imgUrl of producto.imagesUrl">
+          <img src="{{imgUrl}}"/>
+        </ion-slide>
 
-  </ion-slides>
-
-  <ion-card>
-    <ion-card-header>
-      <ion-card-title>{{producto.nombre}} <p float-right>$ {{producto.precio}}</p></ion-card-title>
-    </ion-card-header>
-    <ion-card-content>
-      {{producto.descripcion}}
-    </ion-card-content>
-  </ion-card>
+      </ion-slides>
+    </ion-row>
+    <ion-row>
+      <ion-card col-lg-8 offset-lg-2>
+        <ion-card-header>
+          <ion-card-title>{{producto.nombre}} <p float-right>$ {{producto.precio}}</p></ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+          {{producto.descripcion}}
+        </ion-card-content>
+      </ion-card>
+    </ion-row>
+  </ion-grid>
 
   <ion-fab right bottom>
     <button ion-fab mini color="dark"><ion-icon name="share"></ion-icon></button>
   </ion-fab>
+
 </ion-content>

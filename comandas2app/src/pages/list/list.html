@@ -8,16 +8,29 @@
 </ion-header>
 
 <ion-content>
-  <ion-list>
-    <ion-item>
-      <button ion-item *ngFor="let item of items" (click)="itemTapped($event, item)">
-        <ion-thumbnail item-start>
+  <ion-grid fixed>
+    <ion-row>
+      <ion-card *ngFor="let item of items" col-md-5 col-lg-3 (click)="itemTapped($event, item)" style="margin-top: 5px;">
+        <ion-card-header>
           <img src="{{item.producto.thumbUrl}}">
-        </ion-thumbnail>
-        <h2>{{item.producto.nombre}}</h2>
-        <p>{{item.producto.descripcion}}</p>
-        <p item-right>$ {{item.producto.precio}}</p>
-      </button>
-    </ion-item>
-  </ion-list>
+        </ion-card-header>
+        <ion-card-title>
+          <h2>{{item.producto.nombre}}</h2>
+        </ion-card-title>
+        <div text-right>$ {{item.producto.precio}}</div>
+      </ion-card>
+    </ion-row>
+    <!--<ion-list>
+      <ion-item col-lg-4>
+        <button ion-item *ngFor="let item of items" (click)="itemTapped($event, item)">
+          <ion-thumbnail item-start>
+            <img src="{{item.producto.thumbUrl}}">
+          </ion-thumbnail>
+          <h2>{{item.producto.nombre}}</h2>
+          <p>{{item.producto.descripcion}}</p>
+          <p item-right>$ {{item.producto.precio}}</p>
+        </button>
+      </ion-item>
+    </ion-list>-->
+  </ion-grid>
 </ion-content>

@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule, ErrorHandler } from '@angular/core';
-import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
+import { NgModule } from '@angular/core';
+import { IonicApp, IonicModule } from 'ionic-angular';
 import { MyApp } from './app.component';
 
 import { HelloIonicPage } from '../pages/hello-ionic/hello-ionic';
@@ -12,6 +12,11 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import {HttpClientModule} from "@angular/common/http";
 import {RestapiProvider} from "../providers/restapi/restapi";
 import {AplicacionProvider} from "../providers/app/aplicacion";
+import {SocialSharing} from "@ionic-native/social-sharing";
+import {Social} from "../providers/app/social";
+import {InAppBrowser} from "@ionic-native/in-app-browser";
+import {Device} from "@ionic-native/device";
+import {AppAvailability} from "@ionic-native/app-availability";
 
 @NgModule({
   declarations: [
@@ -23,7 +28,7 @@ import {AplicacionProvider} from "../providers/app/aplicacion";
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp),
-    HttpClientModule,
+    HttpClientModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -37,7 +42,11 @@ import {AplicacionProvider} from "../providers/app/aplicacion";
     SplashScreen,
     RestapiProvider,
     AplicacionProvider,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    SocialSharing,
+    Social,
+      InAppBrowser,
+      Device,
+      AppAvailability
   ]
 })
 export class AppModule {}
