@@ -41,7 +41,6 @@ export class Social {
     }
 
     openInstagram() {
-        console.log(this.aplicacion.instagram_page_name);
         if(!this.aplicacion.instagram_page_name) {
             let toast = this.toast.create({
                 message: 'Cuenta de instagram no configurada',
@@ -64,6 +63,6 @@ export class Social {
             toast.present();
             return;
         }
-        this.launchExternalApp('fb://', 'com.facebook.katana', 'fb://profile/', 'https://www.facebook.com/', this.aplicacion.facebook_page_name);
+        this.launchExternalApp('fb://', 'com.facebook.katana', 'fb://facewebmodal/f?href=https://www.facebook.com/', 'https://www.facebook.com/', this.aplicacion.facebook_page_name);
     }
 }
